@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/07/01 19:41:00 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:59:36 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 // TODO: DLEATE LATER AFTER ADDING PRINTF TO LIBFT
 //# include "../libft/includes/ft_printf.h"
 # include "../libft/libft.h"
+# include <sys/types.h>
 
 typedef enum e_errors
 {
