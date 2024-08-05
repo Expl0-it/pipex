@@ -6,27 +6,30 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:30:02 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/04 08:51:05 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/05 19:08:00 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-static void	ft_init_pipex(t_pipex *pipex)
+// @brief init with default values
+static void	ft_init_pipex(t_pipex *p_pipex)
 {
-	pipex->in_fd = -1;
-	pipex->out_fd = -1;
-	pipex->here_doc = false;
-	pipex->invalid_infile = false;
-	pipex->urandom = false;
-	pipex->cmd_paths = NULL;
-	pipex->cmd_args = NULL;
-	pipex->cmd_count = 0;
+	p_pipex->in_fd = -1;
+	p_pipex->out_fd = -1;
+	p_pipex->here_doc = false;
+	p_pipex->invalid_infile = false;
+	p_pipex->urandom = false;
+	p_pipex->cmd_paths = NULL;
+	p_pipex->cmd_args = NULL;
+	p_pipex->cmd_count = 0;
 }
 
 int	main(int argc, char **argv)
 {
 	t_pipex	pipex;
+	t_pipex	*p_pipex;
 	
-	ft_init_pipex(&pipex);
+	p_pipex = &pipex;
+	ft_init_pipex(p_pipex);
 }
