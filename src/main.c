@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:30:02 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/05 19:08:00 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/07 13:55:20 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	init_pipex(t_pipex *p_pipex, char **argv)
 	p_pipex->cmd_count = 0;
 }
 
-int	main(int argc, char **argv)
+int	main(int argc, char **argv, char **envp)
 {
 	t_pipex	pipex;
 	t_pipex	*p_pipex;
