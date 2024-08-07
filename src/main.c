@@ -34,5 +34,8 @@ int	main(int argc, char **argv, char **envp)
 	t_pipex	*p_pipex;
 	
 	p_pipex = &pipex;
-	ft_init_pipex(p_pipex);
+	if (argc < 5)
+		exit(NOT_ENOUGH_ARGS);
+	init_pipex(p_pipex, argv);
+
 }
