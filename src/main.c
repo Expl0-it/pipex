@@ -13,11 +13,14 @@
 #include "../includes/pipex.h"
 
 // @brief init with default values
-static void	ft_init_pipex(t_pipex *p_pipex)
+static void	init_pipex(t_pipex *p_pipex, char **argv)
 {
 	p_pipex->in_fd = -1;
 	p_pipex->out_fd = -1;
-	p_pipex->here_doc = false;
+	if (ft_strncmp(argv[1], "here_doc", 9))
+		p_pipex->here_doc = true;
+	else
+		p_pipex->here_doc = false;
 	p_pipex->invalid_infile = false;
 	p_pipex->urandom = false;
 	p_pipex->cmd_paths = NULL;
