@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/09 20:09:09 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/15 16:35:07 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 # include <sys/types.h>
 # include <errno.h>
 # include <fcntl.h>
+
+// PATHS
+# define HERE_DOC_PATH ".here_doc_pipex"
+# define URANDOM_PATH ".urandom_pipex"
+# define ERROR_PATH ".error_pipex"
 
 typedef enum e_errors
 {
