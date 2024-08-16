@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/16 13:23:46 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/16 13:56:34 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 // PATHS
 # define HERE_DOC_PATH ".here_doc_pipex"
-# define URANDOM_PATH ".urandom_pipex"
+# define URANDOM_OUT_PATH ".urandom_pipex"
 # define ERROR_PATH ".error_pipex"
 
 // CONSTS
