@@ -6,11 +6,31 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:44:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/16 13:07:49 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/16 13:25:53 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
+
+int	read_line(char **line, int fd, char limiter)
+{
+	char	*buf;
+	char	c;
+	int		i;
+
+	i = 0;
+	if (fd < 0)
+		return (-1);
+	buf = ft_calloc(sizeof(char), BUF_SIZE);
+	if (!buf)
+		return (-1);
+	while (read(fd, &c, 1) > 0 && c > 0 && c != limiter && i < (BUF_SIZE - 2))
+		buf[i++] = c;
+	buf[i] = '\n';
+	buf[i + 1] = 0;
+	*line = buf;
+	return (i + 1);
+}
 
 int	get_infile(t_pipex *p_pipex, char **argv)
 {
