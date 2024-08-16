@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:44:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/16 13:58:23 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:13:15 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,14 @@ int	get_infile(t_pipex *p_pipex, char **argv)
 	}
 	else if (true == p_pipex->urandom)
 	{
-		handle_urandom(); // TODO:
+		handle_urandom();
 		p_pipex->in_fd = open(URANDOM_OUT_PATH, O_RDONLY);
 	}
 	else
 	{
 		if (-1 == access(argv[1], F_OK))
 		{
-			// TODO: PRINT ENOENT ERROR
+			ft_putstr_fd("no such file or directory", STDERR_FILENO);
 			p_pipex->invalid_infile = true;
 			p_pipex->in_fd = open(ERROR_PATH, O_RDONLY | O_CREAT, 0644);
 		}
