@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/16 13:56:34 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:16:22 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 // CONSTS
 # define BUF_SIZE 4096
 
+// TYPE DECLARATIONS
 typedef enum e_errors
 {
 	OK = 0,
@@ -47,4 +48,9 @@ typedef struct s_pipex
 	int		cmd_count;
 }				t_pipex;
 
+// FUNCTION DECLARATIONS
+
+// files.c
+int		get_infile(t_pipex *p_pipex, char **argv);
+int		get_outfile(t_pipex *p_pipex, char **argv, int argc);
 #endif
