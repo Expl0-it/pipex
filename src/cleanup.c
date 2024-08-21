@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 18:09:54 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/21 18:45:33 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/21 19:08:45 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 // NOTE: free the array, if to_be_freed provided free n elements only
-static void	free_arr(char **arr, int to_be_freed)
+void	free_arr(char **arr, int to_be_freed)
 {
 	int	i;
 
