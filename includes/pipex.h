@@ -33,7 +33,8 @@ typedef enum e_errors
 {
 	OK = 0,
 	MALLOC_ERROR = 1,
-	NOT_ENOUGH_ARGS = 2 
+	NOT_ENOUGH_ARGS = 2,
+	ERR_ARGS = 3
 }				t_errors;
 
 typedef struct s_pipex
