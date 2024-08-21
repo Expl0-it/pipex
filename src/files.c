@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:44:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/16 14:13:15 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:35:24 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	handle_here_doc(char *limiter)
 		free(line);
 		write(STDOUT_FILENO, "heredoc> ", 9);
 	}
-	close(fd);
 	return (0);
 }
 
@@ -72,7 +71,6 @@ int	handle_urandom(void)
 		return (-1);
 	write(tmp_fd, line, ft_strlen(line));
 	free(line);
-	close(tmp_fd);
 	close(urandom_fd);
 	return (0);
 }
