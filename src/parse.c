@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:27:13 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/16 14:19:36 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/21 19:29:41 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,29 @@ bool	parse_args(t_pipex *p_pipex, int argc, char **argv)
 	if (-1 == get_outfile(p_pipex, argv, argc))
 		return (false);
 	p_pipex->cmd_count = (argc - (3 + p_pipex->here_doc));
+	return (true);
+}
+
+bool	parse_cmd_paths(t_pipex *p_pipex, int argc, char **argv, char **envp)
+{
+	int		i;
+	char	**cmd;
+
+	p_pipex->cmd_paths = ft_calloc(sizeof(char *), (argc - 2 - p_pipex->here_doc));
+	if (NULL == p_pipex->cmd_paths)
+		return (false);
+	i = 1 + p_pipex->here_doc;
+	while (++i < (argc - 1))
+	{
+		cmd = ft_split(argv[i], ' ');
+		if (!cmd)
+		{
+			free_arr(p_pipex->cmd_paths, (i - 2 - p_pipex->here_doc));
+			p_pipex->cmd_paths = NULL;
+			return (false);
+		}
+		p_pipex->cmd_paths[i - 2 - p_pipex->here_doc] = find_path(cmd[0], envp);
+		free_arr(cmd, -1);
+	}
 	return (true);
 }
