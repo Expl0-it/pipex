@@ -45,7 +45,7 @@ typedef struct s_pipex
 	bool	invalid_infile;
 	bool	urandom;
 	char	**cmd_paths;
-	char	**cmd_args;
+	char	***cmd_args;
 	int		cmd_count;
 }				t_pipex;
 
