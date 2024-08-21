@@ -30,3 +30,12 @@ static char	*get_env(char *key, char **envp)
 	return (NULL);
 }
 
+char **get_paths(char **envp)
+{
+	char	*path;
+
+	path = get_env("PATH", envp);
+	if (NULL == path)
+		return (NULL);
+	return (ft_split(path, ':'));
+}
