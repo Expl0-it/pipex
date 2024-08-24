@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/24 13:15:36 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:42:54 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ typedef enum e_errors
 	OK = 0,
 	MALLOC_ERROR = 1,
 	NOT_ENOUGH_ARGS = 2,
-	ERR_ARGS = 3
+	ERR_ARGS = 3,
+	ERR_PATHS = 4,
+	ERR_CMD_ARGS = 5
 }				t_errors;
 
 typedef struct s_pipex
@@ -57,6 +59,8 @@ int		get_outfile(t_pipex *p_pipex, char **argv, int argc);
 
 // parse.c
 bool	parse_args(t_pipex *p_pipex, int argc, char **argv);
+bool	parse_cmd_paths(t_pipex *p_pipex, int argc, char **argv, char **envp);
+bool	parse_cmd_args(t_pipex *p_pipex, int argc, char **argv);
 
 // cleanup.c
 void	free_arr(char **arr, int to_be_freed);
