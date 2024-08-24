@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:30:02 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/21 18:43:09 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:41:44 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,8 @@ int	main(int argc, char **argv, char **envp)
 	init_pipex(p_pipex);
 	if (false == parse_args(p_pipex, argc, argv))
 		return (cleanup(p_pipex) + ERR_ARGS);
+	if (false == parse_cmd_paths(p_pipex, argc, argv, envp))
+		return (cleanup(p_pipex) + ERR_PATHS);
+	if (false == parse_cmd_args(p_pipex, argc, argv))
+		return (cleanup(p_pipex) + ERR_CMD_ARGS);
 }
