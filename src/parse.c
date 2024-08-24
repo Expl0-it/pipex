@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:27:13 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/21 19:29:41 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:09:51 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ bool	parse_cmd_paths(t_pipex *p_pipex, int argc, char **argv, char **envp)
 	int		i;
 	char	**cmd;
 
-	p_pipex->cmd_paths = ft_calloc(sizeof(char *), (argc - 2 - p_pipex->here_doc));
+	p_pipex->cmd_paths = ft_calloc(sizeof(char *), \
+							(argc - 2 - p_pipex->here_doc));
 	if (NULL == p_pipex->cmd_paths)
 		return (false);
 	i = 1 + p_pipex->here_doc;

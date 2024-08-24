@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 18:09:54 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/21 19:08:45 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:08:05 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	free_arr(char **arr, int to_be_freed)
 			i++;
 		}
 	}
-
 }
 
 // NOTE: free the array, if to_be_freed provided free n elements only

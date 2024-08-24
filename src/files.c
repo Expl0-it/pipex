@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:44:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/21 18:35:24 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:09:35 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	handle_urandom(void)
 		return (-1);
 	tmp_fd = open(URANDOM_OUT_PATH, O_RDWR | O_CREAT | O_TRUNC, 0644);
 	if (tmp_fd < 0)
-		return  (-1);
+		return (-1);
 	if (-1 == read_line(&line, urandom_fd, 0))
 		return (-1);
 	write(tmp_fd, line, ft_strlen(line));
@@ -104,8 +104,10 @@ int	get_infile(t_pipex *p_pipex, char **argv)
 int	get_outfile(t_pipex *p_pipex, char **argv, int argc)
 {
 	if (true == p_pipex->here_doc)
-		p_pipex->out_fd = open(argv[argc - 1], O_RDWR | O_CREAT | O_APPEND, 0644);
+		p_pipex->out_fd = open(argv[argc - 1], \
+					O_RDWR | O_CREAT | O_APPEND, 0644);
 	else
-		p_pipex->out_fd = open(argv[argc - 1], O_RDWR | O_CREAT | O_TRUNC, 0644);
+		p_pipex->out_fd = open(argv[argc - 1], \
+					O_RDWR | O_CREAT | O_TRUNC, 0644);
 	return (p_pipex->out_fd);
 }

@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:07:13 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/24 13:03:24 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:10:19 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static char	*get_env(char *key, char **envp)
 	while (envp[i])
 	{
 		if (ft_strncmp(key, envp[i], key_len) == 0
-				 && envp[i][key_len] == '=')
+			&& envp[i][key_len] == '=')
 			return (ft_strchr(envp[i], '=') + 1);
 		i++;
 	}
