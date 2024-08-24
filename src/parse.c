@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:27:13 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/24 13:09:51 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:39:58 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,29 @@ bool	parse_cmd_paths(t_pipex *p_pipex, int argc, char **argv, char **envp)
 		}
 		p_pipex->cmd_paths[i - 2 - p_pipex->here_doc] = find_path(cmd[0], envp);
 		free_arr(cmd, -1);
+	}
+	return (true);
+}
+
+bool	parse_cmd_args(t_pipex *p_pipex, int argc, char **argv)
+{
+	int		i;
+	char	**cmd;
+
+	p_pipex->cmd_args = ft_calloc(sizeof(char **), (argc - 2 - p_pipex->here_doc));
+	if (NULL == p_pipex->cmd_args)
+		return (false);
+	i = 1 + p_pipex->here_doc;
+	while (++i < (argc - 1))
+	{
+		cmd = ft_split(argv[i], ' ');
+		if (NULL == cmd)
+		{
+			free_2d_arr(p_pipex->cmd_args, p_pipex->cmd_count);
+			p_pipex->cmd_args = NULL;
+			return (false);
+		}
+		p_pipex->cmd_args[i - 2 - p_pipex->here_doc] = cmd;
 	}
 	return (true);
 }
