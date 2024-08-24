@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 18:09:54 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/24 13:08:05 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:12:39 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	free_arr(char **arr, int to_be_freed)
 }
 
 // NOTE: free the array, if to_be_freed provided free n elements only
-static void	free_2d_arr(char ***arr, int to_be_freed)
+void	free_2d_arr(char ***arr, int to_be_freed)
 {
 	int	i;
 

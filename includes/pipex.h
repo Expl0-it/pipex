@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/21 19:02:07 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/24 13:13:09 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ bool	parse_args(t_pipex *p_pipex, int argc, char **argv);
 
 // cleanup.c
 void	free_arr(char **arr, int to_be_freed);
+void	free_2d_arr(char ***arr, int to_be_freed);
 int		cleanup(t_pipex *p_pipex);
 
 #endif
