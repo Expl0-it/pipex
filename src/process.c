@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 19:16:28 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/28 19:38:25 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/28 19:57:12 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,29 @@ bool	pipe_fork(t_pipex *p_pipex, pid_t *p_pid, int fds[2], int i)
 	}
 	else
 		dup2(fds[0], STDIN_FILENO);
+	return (true);
+}
+
+bool	create_child(t_pipex *p_pipex, int i, char **envp)
+{
+	pid_t	pid;
+	int		fds[2];
+
+	if (false == pipe_fork(p_pipex, &pid, fds, i))
+		return (false);
+	if (pid == 0)
+	{
+		if (p_pipex->cmd_paths[i])
+			execve(p_pipex->cmd_paths[i], p_pipex->cmd_args[i], envp);
+		else
+			ft_putstr_fd("pipex: one of provided arguments not found", 2);
+		cleanup(p_pipex);
+		exit(ERR_PATHS);
+	}
+	else
+	{
+		close(fds[0]);
+		close(fds[1]);
+	}
 	return (true);
 }
