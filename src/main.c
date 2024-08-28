@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:30:02 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/24 13:41:44 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/28 20:09:49 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv, char **envp)
 {
 	t_pipex	pipex;
 	t_pipex	*p_pipex;
+	int		i;
 	
 	if (argc < 5)
 		exit(NOT_ENOUGH_ARGS);
@@ -40,4 +41,12 @@ int	main(int argc, char **argv, char **envp)
 		return (cleanup(p_pipex) + ERR_PATHS);
 	if (false == parse_cmd_args(p_pipex, argc, argv))
 		return (cleanup(p_pipex) + ERR_CMD_ARGS);
+	i = -1;
+	while (++i < pipex.cmd_count)
+		if (false == handle_child(p_pipex, i, envp))
+			return(cleanup(p_pipex), ERR_PIPE_FORK);
+	i = -1;
+	while (++i < pipex.cmd_count)
+		wait(NULL);
+	return (cleanup(p_pipex), OK);
 }
