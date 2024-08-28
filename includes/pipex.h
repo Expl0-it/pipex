@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/24 13:42:54 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/08/28 20:05:47 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "../libft/libft.h"
 #include <stdio.h>
 # include <sys/types.h>
+# include <sys/wait.h>
 # include <errno.h>
 # include <fcntl.h>
 
@@ -36,7 +37,8 @@ typedef enum e_errors
 	NOT_ENOUGH_ARGS = 2,
 	ERR_ARGS = 3,
 	ERR_PATHS = 4,
-	ERR_CMD_ARGS = 5
+	ERR_CMD_ARGS = 5,
+	ERR_PIPE_FORK = 6
 }				t_errors;
 
 typedef struct s_pipex
@@ -69,5 +71,8 @@ int		cleanup(t_pipex *p_pipex);
 
 // env_paths.c
 char	*find_path(char *cmd, char **envp);
+
+// process.c
+bool	handle_child(t_pipex *p_pipex, int i, char **envp);
 
 #endif
