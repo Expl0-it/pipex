@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 19:16:28 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/28 20:09:53 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:29:10 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ bool	handle_child(t_pipex *p_pipex, int i, char **envp)
 		if (p_pipex->cmd_paths[i])
 			execve(p_pipex->cmd_paths[i], p_pipex->cmd_args[i], envp);
 		else
-			ft_putstr_fd("pipex: one of provided arguments not found", 2);
+			ft_putstr_fd("pipex: one of provided arguments not found\n", 2);
 		cleanup(p_pipex);
 		exit(ERR_PATHS);
 	}

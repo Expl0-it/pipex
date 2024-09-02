@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:44:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/24 13:09:35 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:28:43 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	get_infile(t_pipex *p_pipex, char **argv)
 	{
 		if (-1 == access(argv[1], F_OK))
 		{
-			ft_putstr_fd("no such file or directory", STDERR_FILENO);
+			ft_putstr_fd("no such file or directory\n", STDERR_FILENO);
 			p_pipex->invalid_infile = true;
 			p_pipex->in_fd = open(ERROR_PATH, O_RDONLY | O_CREAT, 0644);
 		}
