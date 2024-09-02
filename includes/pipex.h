@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:51:07 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/28 20:05:47 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/09/02 12:00:35 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 // INCLUDES
 # include "../libft/libft.h"
-#include <stdio.h>
 # include <sys/types.h>
 # include <sys/wait.h>
 # include <errno.h>
