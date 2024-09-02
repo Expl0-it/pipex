@@ -6,35 +6,27 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 18:09:54 by mamichal          #+#    #+#             */
-/*   Updated: 2024/08/24 13:46:45 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/09/02 15:20:57 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
+#include <stdlib.h>
 
 // NOTE: free the array, if to_be_freed provided free n elements only
 void	free_arr(char **arr, int to_be_freed)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	if (-1 == to_be_freed)
-	{
-		while (NULL != arr[i])
-		{
+		while (NULL != arr[++i])
 			free(arr[i]);
-			i++;
-		}
-	}
 	else
-	{
-		while (i < to_be_freed)
-		{
+		while (++i < to_be_freed)
 			if (NULL != arr[i])
 				free(arr[i]);
-			i++;
-		}
-	}
+	free(arr);
 }
 
 // NOTE: free the array, if to_be_freed provided free n elements only
@@ -42,24 +34,15 @@ void	free_2d_arr(char ***arr, int to_be_freed)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	if (-1 == to_be_freed)
-	{
-		while (arr[i])
-		{
+		while (arr[++i])
 			free_arr(arr[i], -1);
-			i++;
-		}
-	}
 	else
-	{
-		while (i < to_be_freed)
-		{
+		while (++i < to_be_freed)
 			if (arr[i])
 				free_arr(arr[i], -1);
-			i++;
-		}
-	}
+	free(arr);
 }
 
 int	cleanup(t_pipex *p_pipex)
