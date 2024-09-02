@@ -6,7 +6,7 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 19:44:56 by mamichal          #+#    #+#             */
-/*   Updated: 2024/09/02 10:28:43 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:53:47 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int	handle_here_doc(char *limiter)
 	write(STDOUT_FILENO, "heredoc> ", 9);
 	while (read_line(&line, STDIN_FILENO, '\n') > 0)
 	{
-		if (ft_strncmp(line, limiter, ft_strlen(limiter) + 1))
+		if (0 == ft_strncmp(line, limiter, ft_strlen(limiter))
+			&& (ft_strlen(line) == ft_strlen(limiter) + 1))
 		{
 			free(line);
 			break ;
