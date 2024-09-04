@@ -1,4 +1,5 @@
 ./pipex infile "grep a" "wc -l" outfile
+./pipex infile "cat" "head -n 5" "grep a" outfile
 ./pipex infile "head -n 5" "grep a" "wc -l" outfile
 ./pipex here_doc "EOF" "grep a" "wc -l" outfile
 ./pipex here_doc "EOF" "head -n 5" "grep a" "wc -l" outfile
