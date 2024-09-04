@@ -6,7 +6,7 @@
 #    By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 10:27:39 by mamichal          #+#    #+#              #
-#    Updated: 2024/09/03 10:36:36 by mamichal         ###   ########.fr        #
+#    Updated: 2024/09/04 18:58:26 by mamichal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ ${NAME}: $(OBJS) ${LIBFT}
 	echo Compiling Executable
 
 all: ${NAME}
+
+bonus: ${NAME}
 
 ${LIBFT}:
 	make -C ${LIBFT_PATH} all
