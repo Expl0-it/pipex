@@ -6,12 +6,11 @@
 /*   By: mamichal <mamichal@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 18:09:54 by mamichal          #+#    #+#             */
-/*   Updated: 2024/09/02 15:20:57 by mamichal         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:56:44 by mamichal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
-#include <stdlib.h>
 
 // NOTE: free the array, if to_be_freed provided free n elements only
 void	free_arr(char **arr, int to_be_freed)
